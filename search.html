@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البحث عن الهدنة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>مرحبًا بك في صفحة البحث</h1>
+    <p>يمكنك البحث عن:</p>
+    <p><em>"متى الهدنة؟"</em></p>
+    <input type="text" id="searchBox" placeholder="اكتب هنا">
+    <button onclick="search()">بحث</button>
+
+    <script>
+        function search() {
+            const now = new Date();
+            const hours = now.getHours();
+            let message;
+
+            if (hours >= 6 && hours < 18) { // وقت النهار
+                message = "روح شوفلك شغلة اتسلى فيها بدل النوم 🤪 لسه فش هدنة";
+            } else { // وقت الليل
+                message = "روح نام يعسل لسه فش هدنة 😂";
+            }
+
+            document.body.innerHTML = `<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+                <h1 style="font-size: 36px; text-align: center;">${message}</h1>
+            </div>`;
+        }
+    </script>
+</body>
+</html>
